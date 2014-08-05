@@ -38,7 +38,7 @@ declare module "body-parser" {
          * parse extended syntax with the qs module. (default: true)
          */
         extended?: boolean;
-    }): express.RequestHandler;
+    }): express.Request;
 
     module bodyParser {
         export function json(options?: {
@@ -66,7 +66,7 @@ declare module "body-parser" {
              * passed to JSON.parse().
              */
             receiver?: (key: string, value: any) => any;
-        }): express.RequestHandler;
+        }): express.Request;
 
         export function raw(options?: {
             /**
@@ -85,7 +85,7 @@ declare module "body-parser" {
              * function to verify body content, the parsing can be aborted by throwing an error.
              */
             verify?: (req: express.Request, res: express.Response, buf: Buffer, encoding: string) => void;
-        }): express.RequestHandler;
+        }): express.Request;
 
         export function text(options?: {
             /**
@@ -108,7 +108,7 @@ declare module "body-parser" {
              * the default charset to parse as, if not specified in content-type. (default: 'utf-8')
              */
             defaultCharset?: string;
-        }): express.RequestHandler;
+        }): express.Request;
 
         export function urlencoded(options?: {
             /**
@@ -131,7 +131,7 @@ declare module "body-parser" {
              * parse extended syntax with the qs module. (default: true)
              */
             extended?: boolean;
-        }): express.RequestHandler;
+        }): express.Request;
     }
 
     export = bodyParser;
